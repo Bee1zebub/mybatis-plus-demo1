@@ -38,8 +38,7 @@ public class TestSelect {
 
     /**
      * 简单的条件查询--通过map封装查询条件 <==> SELECT id,name,age,email,create_time,update_time FROM user WHERE name = ? AND id = ? AND age = ?
-     * 注意：map中的key对应的是数据库中的列名。例如数据库user_id，实体类是userId，这时map的key需
-     * 要填写user_id
+     * 注意：map中的key对应的是数据库中的列名。例如数据库user_id，实体类是userId，这时map的key需要填写user_id
      */
     @Test
     public void testSelectByMap() {

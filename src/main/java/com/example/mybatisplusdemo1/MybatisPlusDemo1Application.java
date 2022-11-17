@@ -5,7 +5,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(value = {"com.example.mybatisplusdemo1.mapper"})
 public class MybatisPlusDemo1Application {
 
     public static void main(String[] args) {

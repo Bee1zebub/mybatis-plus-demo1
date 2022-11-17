@@ -19,8 +19,12 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {
         log.info("start insert fill ....");
-        this.setFieldValByName("createTime", new Date(), metaObject);
-        //this.strictInsertFill(metaObject, "createTime", LocalDateTime.class, LocalDateTime.now()); // 起始版本 3.3.0(推荐使用)
+        // MP自动添加创建时间
+        // this.setFieldValByName("createTime", new Date(), metaObject);
+        this.strictInsertFill(metaObject, "createTime", Date.class, new Date()); // 起始版本 3.3.0(推荐使用)
+
+        // MP自动添加版本号值
+        this.strictInsertFill(metaObject, "version",Integer.class,1);
         // 或者
         // this.strictInsertFill(metaObject, "createTime", () -> LocalDateTime.now(), LocalDateTime.class); // 起始版本 3.3.3(推荐)
     }
@@ -32,8 +36,9 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void updateFill(MetaObject metaObject) {
         log.info("start update fill ....");
-        this.setFieldValByName("updateTime", new Date(), metaObject);
-        //this.strictUpdateFill(metaObject, "updateTime", LocalDateTime.class, LocalDateTime.now()); // 起始版本 3.3.0(推荐)
+        //this.setFieldValByName("updateTime", new Date(), metaObject);
+        this.strictUpdateFill(metaObject, "updateTime", Date.class, new Date()); // 起始版本 3.3.0(推荐)
+        this.strictUpdateFill(metaObject, "name", String.class, "cmy"); // 起始版本 3.3.0(推荐)
         // 或者
         // this.strictUpdateFill(metaObject, "updateTime", () -> LocalDateTime.now(), LocalDateTime.class); // 起始版本 3.3.3(推荐)
     }
