@@ -88,7 +88,7 @@ public class TestInsertUpdate {
         User user = userMapper.selectById(1593073247551901698L);
         // 2、修改该User对象的一些属性值，其他的值不变
         user.setName("陈明扬");
-        user.setAge(21);
+        user.setAge(18);
         // 3、执行修改
         userMapper.updateById(user);
     }

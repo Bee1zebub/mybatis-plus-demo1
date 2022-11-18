@@ -34,4 +34,8 @@ public class User {
 
     @TableField(fill = FieldFill.UPDATE)
     private Date updateTime;
+
+    @TableLogic
+    @TableField(fill = FieldFill.INSERT)
+    private Integer deleted;
 }

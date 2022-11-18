@@ -22,7 +22,7 @@ public class TestSelect {
      */
     @Test
     public void testSelectById() {
-        User user = userMapper.selectById(1L);
+        User user = userMapper.selectById(1592862041153794049L);
         log.info("use:{}",user);
     }
 
@@ -50,5 +50,4 @@ public class TestSelect {
 
         users.forEach(System.out::println);
     }
-
 }

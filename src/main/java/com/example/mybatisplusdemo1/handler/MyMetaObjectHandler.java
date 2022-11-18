@@ -13,7 +13,7 @@ import java.util.Date;
 public class MyMetaObjectHandler implements MetaObjectHandler {
 
     /**
-     * 使用MP实现添加操作，这个方法会执行
+     * 使用MP实现添加操作，这个方法会执行，需要数据库没有设置默认值
      * @param metaObject 元对象
      */
     @Override
@@ -25,6 +25,9 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
 
         // MP自动添加版本号值
         this.strictInsertFill(metaObject, "version",Integer.class,1);
+
+        // MP自动添加逻辑删除标志位
+        this.strictInsertFill(metaObject,"deleted",Integer.class,0);
         // 或者
         // this.strictInsertFill(metaObject, "createTime", () -> LocalDateTime.now(), LocalDateTime.class); // 起始版本 3.3.3(推荐)
     }

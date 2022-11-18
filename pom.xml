@@ -25,7 +25,15 @@
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
-<!--mybatisPlus启动器，包含spring-boot-jdbc-->
+        <!-- 开启MP sql性能分分析 -->
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>3.9.1</version>
+        </dependency>
+
+
+        <!--mybatisPlus启动器，包含spring-boot-jdbc-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
